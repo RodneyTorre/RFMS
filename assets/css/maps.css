@@ -1,0 +1,27 @@
+.page-header { display: flex; justify-content: space-between; margin-bottom: 24px; }
+    .page-title-section h1 { font-size: 28px; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
+    .page-subtitle { color: #64748b; font-size: 14px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border: none; border-radius: 8px; font-size: 14px; font-weight: 500; cursor: pointer; }
+    .btn .material-icons { font-size: 18px; }
+    .btn-secondary { background: white; color: #64748b; border: 1px solid #e5e7eb; }
+    .btn-primary { background: #10b981; color: white; }
+    
+    .tabs-container { background: white; border-radius: 12px; margin-bottom: 20px; border: 1px solid #e5e7eb; padding: 4px; display: flex; gap: 4px; }
+    .tab-btn { flex: 1; padding: 12px 20px; background: none; border: none; color: #64748b; font-size: 14px; font-weight: 500; cursor: pointer; border-radius: 8px; }
+    .tab-btn.active { color: #10b981; background: #f0fdf4; }
+    
+    .map-container { background: white; border-radius: 12px; border: 1px solid #e5e7eb; padding: 24px; }
+    .map-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+    .control-group label { display: block; font-size: 13px; font-weight: 600; color: #475569; margin-bottom: 12px; }
+    .control-group input[type="checkbox"] { margin-right: 8px; }
+    .control-group select { width: 100%; padding: 10px; border: 1px solid #e5e7eb; border-radius: 8px; }
+    .checkbox-list { display: flex; flex-direction: column; gap: 8px; }
+    .checkbox-list label { font-weight: 400; cursor: pointer; }
+    
+    .map-display { height: 500px; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #059669; }
+    .map-display .material-icons { font-size: 64px; margin-bottom: 16px; }
+    .map-display h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+    .map-display p { font-size: 14px; color: #10b981; margin-bottom: 24px; }
+    .map-stats { display: flex; gap: 32px; }
+    .map-stat { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; }
+    .map-stat .material-icons { font-size: 20px; }

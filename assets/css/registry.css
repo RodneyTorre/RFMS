@@ -1,0 +1,321 @@
+/* Page Header */
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 24px;
+    }
+
+    .page-title-section h1 {
+        font-size: 28px;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 4px;
+    }
+
+    .page-subtitle {
+        color: #64748b;
+        font-size: 14px;
+    }
+
+    .page-actions {
+        display: flex;
+        gap: 12px;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .btn .material-icons {
+        font-size: 18px;
+    }
+
+    .btn-filter {
+        background: white;
+        color: #64748b;
+        border: 1px solid #e5e7eb;
+    }
+
+    .btn-filter:hover {
+        background: #f9fafb;
+    }
+
+    .btn-primary {
+        background: #10b981;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background: #059669;
+    }
+
+    /* Tabs */
+    .tabs-container {
+        background: white;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #e5e7eb;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        position: relative;
+    }
+
+    .tab-btn {
+        flex: 1;
+        padding: 12px 20px;
+        background: none;
+        border: none;
+        color: #64748b;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: all 0.2s;
+        white-space: nowrap;
+    }
+
+    .tab-btn:hover {
+        color: #1e293b;
+        background: #f9fafb;
+    }
+
+    .tab-btn.active {
+        color: #10b981;
+        background: #f0fdf4;
+    }
+
+    .tab-scroll-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 32px;
+        height: 32px;
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    .tab-scroll-btn.left {
+        right: 40px;
+    }
+
+    .tab-scroll-btn.right {
+        right: 4px;
+    }
+
+    .tab-scroll-btn .material-icons {
+        font-size: 18px;
+        color: #64748b;
+    }
+
+    /* Search Box */
+    .search-box {
+        background: white;
+        border-radius: 12px;
+        padding: 16px 20px;
+        margin-bottom: 20px;
+        border: 1px solid #e5e7eb;
+        position: relative;
+    }
+
+    .search-box .material-icons {
+        position: absolute;
+        left: 28px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #9ca3af;
+        font-size: 20px;
+    }
+
+    .search-box input {
+        width: 100%;
+        padding: 0 0 0 36px;
+        border: none;
+        font-size: 14px;
+        color: #1e293b;
+        background: transparent;
+    }
+
+    .search-box input:focus {
+        outline: none;
+    }
+
+    .search-box input::placeholder {
+        color: #9ca3af;
+    }
+
+    /* Table Card */
+    .table-card {
+        background: white;
+        border-radius: 12px;
+        border: 1px solid #e5e7eb;
+        overflow: hidden;
+    }
+
+    /* Data Table */
+    .data-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .data-table thead {
+        background: #f9fafb;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .data-table th {
+        padding: 14px 20px;
+        text-align: left;
+        font-size: 12px;
+        font-weight: 600;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .data-table tbody tr {
+        border-bottom: 1px solid #f1f5f9;
+        transition: all 0.2s;
+    }
+
+    .data-table tbody tr:hover {
+        background: #f9fafb;
+    }
+
+    .data-table tbody tr:last-child {
+        border-bottom: none;
+    }
+
+    .data-table td {
+        padding: 16px 20px;
+        font-size: 14px;
+        color: #334155;
+    }
+
+    /* Status Badges */
+    .status-badge {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .status-badge.active {
+        background: #d1fae5;
+        color: #065f46;
+    }
+
+    .status-badge.pending {
+        background: #fef3c7;
+        color: #92400e;
+    }
+
+    /* Action Buttons */
+    .action-buttons {
+        display: flex;
+        gap: 8px;
+    }
+
+    .action-btn {
+        width: 32px;
+        height: 32px;
+        border: none;
+        background: #f1f5f9;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .action-btn .material-icons {
+        font-size: 16px;
+        color: #64748b;
+    }
+
+    .action-btn:hover {
+        background: #e2e8f0;
+    }
+
+    .action-btn.view:hover {
+        background: #dbeafe;
+    }
+
+    .action-btn.view:hover .material-icons {
+        color: #1e40af;
+    }
+
+    .action-btn.edit:hover {
+        background: #fef3c7;
+    }
+
+    .action-btn.edit:hover .material-icons {
+        color: #92400e;
+    }
+
+    .action-btn.delete:hover {
+        background: #fee2e2;
+    }
+
+    .action-btn.delete:hover .material-icons {
+        color: #991b1b;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .table-card {
+            overflow-x: auto;
+        }
+
+        .data-table {
+            min-width: 900px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .page-header {
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .page-actions {
+            width: 100%;
+        }
+
+        .btn {
+            flex: 1;
+            justify-content: center;
+        }
+
+        .tabs-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .tabs-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tab-btn {
+            flex: 0 0 auto;
+        }
+    }

@@ -1,0 +1,9 @@
+March 16, 2026
+
+creating UI of the system
+Done creating the navigation-bar
+
+continual process:
+	
+	Connect into database.
+	Continue the home.php.
