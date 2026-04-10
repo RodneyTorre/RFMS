@@ -127,17 +127,50 @@ $nav_items = [
                         <!-- Dropdown menu -->
                         <div id="userDropdownMenu" class="dropdown-menu">
                             <a href="profile.php">Profile</a>
-                            <a href="switch_account.php">Switch Account</a>
-                            <a href="logout.php">Logout</a>
-                        </div>
+                            <a href="#" onclick="openLogoutModal(); return false;">Logout</a>
+                        </div>    
                     </div>
                 </div>
+            
             </header>
+            <body>
+             <div id="logoutModal">
+                <div class="modal-content">
+                    <h3>Are you sure you want to log out?</h3>
+                    <div class="modal-buttons">
+                        <button id="cancelLogout">Cancel</button>
+                        <form action="logout.php" method="POST" style="margin:0;">
+                            <button type="submit" id="confirmLogout">Logout</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </body>
 
             <!-- Content Container -->
             <div class="content-container">
                 <!-- Page content will be inserted here -->
+
+            
 <script >
+// Open modal
+function openLogoutModal() {
+    document.getElementById("logoutModal").classList.add("active");
+}
+
+// Close modal
+document.getElementById("cancelLogout").onclick = function() {
+    document.getElementById("logoutModal").classList.remove("active");
+};
+
+// Close when clicking outside
+window.onclick = function(event) {
+    let modal = document.getElementById("logoutModal");
+    if (event.target === modal) {
+        modal.classList.remove("active");
+    }
+};
+    //For user dropdown                
     function toggleUserDropdown(event) {
     event.stopPropagation(); // Prevent triggering parent clicks
 

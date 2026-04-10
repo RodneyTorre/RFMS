@@ -1,33 +1,33 @@
-<?php
-session_start();
-include 'database.php'; // your database.php connection file
+    <?php
+    session_start();
+    include 'database.php'; // your database.php connection file
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
-// Check if user exists
-$sql = "SELECT * FROM users WHERE email = ?";
-  $stmt = $conn->prepare($sql);
-  $stmt->bind_param("s", $email);
-  $stmt->execute();
-  $result = $stmt->get_result();
+    // Check if user exists
+    $sql = "SELECT * FROM users WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    if (password_verify($password, $row['password']) || $password === $row['password']) {
-      $_SESSION['email'] = $row['email'];
-      header("Location: dashboard.php");
-      exit();
+        if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        if (password_verify($password, $row['password']) || $password === $row['password']) {
+        $_SESSION['email'] = $row['email'];
+        header("Location: dashboard.php");
+        exit();
+            } else {
+                $error = "Incorrect password!";
+            }
         } else {
-            $error = "Incorrect password!";
+            $error = "User not found!";
         }
-    } else {
-        $error = "User not found!";
     }
-}
-?>
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
