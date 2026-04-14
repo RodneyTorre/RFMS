@@ -1,6 +1,7 @@
 <?php
+session_start();
 include 'database.php';
-include 'header.php';
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -18,7 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ssssds", $full_name, $gender, $contact, $address, $farm_size, $crop_type);
 
     if ($stmt->execute()) {
-        echo "Farmer added successfully!";
+        // ✅ REDIRECT after insert
+        header("Location: registry.php?success=1");
+        exit();
     } else {
         echo "Error: " . $conn->error;
     }
@@ -33,7 +36,9 @@ if ($result) {
         $farmers[] = $row;
     }
 }
+include 'header.php';
 ?>
+
 <link rel="stylesheet" href="assets/css/registry.css">
 
 <!-- Page Content -->
@@ -54,13 +59,6 @@ if ($result) {
     </div>
 </div>
 
-<!-- Tabs -->
-<div class="tabs-container">
-    <button class="tab-btn active">Farmer Registry</button>
-    <button class="tab-btn">Farm Profiles</button>
-
-</div>
-
 <!-- Search Box -->
 <div class="search-box">
     <span class="material-icons">search</span>
@@ -77,7 +75,6 @@ if ($result) {
                 <th>BARANGAY</th>
                 <th>FARM SIZE</th>
                 <th>CROPS</th>
-                <th>STATUS</th>
                 <th>ACTIONS</th>
             </tr>
         </thead>
@@ -91,15 +88,9 @@ if ($result) {
                 <td><?php echo $farmer['crop_type']; ?></td>
                 <td>Active</td>
                 <td>
-                    <span class="status-badge <?php echo strtolower($farmer['status']); ?>">
-                        <?php echo $farmer['status']; ?>
-                    </span>
                 </td>
                 <td>
                     <div class="action-buttons">
-                        <button class="action-btn view" title="View Details">
-                            <span class="material-icons">visibility</span>
-                        </button>
                         <button class="action-btn edit" title="Edit">
                             <span class="material-icons">edit</span>
                         </button>
@@ -115,15 +106,14 @@ if ($result) {
 </div>
 <!-- FARMER MODAL -->
 <div id="farmerModal" class="modal">
-
+    
     <div class="modal-content">
-
+         
         <!-- HEADER -->
         <div class="modal-header">
             <h2>Add New Farmer</h2>
-            <span class="close-btn" onclick="closeFarmerModal()">×</span>
         </div>
-
+              
         <!-- FORM -->
         <form method="POST" action="">
 
@@ -147,8 +137,9 @@ if ($result) {
             </div>
 
         </form>
-
-    </div>
+    
+    
+</div>         
 </div>
 <script>
     function openFarmerModal() {

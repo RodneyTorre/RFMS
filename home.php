@@ -15,7 +15,7 @@
         <div class="nav-container">
             <div class="logo">
                 <span class="material-icons">agriculture</span>
-                <span>AgriMS</span>
+                <span>RFMS</span>
             </div>
             <nav class="nav-links">
                 <a href="#features">Features</a>
@@ -23,10 +23,11 @@
                 <a href="#contact">Contact</a>
                 <a href="#request">Request / Registration</a>
                 <a href="#feedback">Feedback</a>
-                <a href="login.php" class="btn btn-primary">
-                    <span class="material-icons">login</span>
-                    Login to System
-                </a>
+                <div class="login-btn">
+                    <a href="login.php" class="btn btn-primary">
+                        Login to System
+                    </a>
+                </div>
             </nav>
         </div>
     </header>
@@ -39,7 +40,7 @@
                     Modernizing <span class="highlight">Agriculture</span> Management
                 </h1>
                 <p>
-                    Comprehensive digital platform for managing farmers, production, insurance, and agricultural operations across the Philippines.
+                    Comprehensive digital platform for managing farmers, production, insurance, and agricultural operations across the Inabanga.
                 </p>
                 <div class="hero-buttons">
                     <a href="login.php" class="btn btn-primary">
@@ -66,7 +67,7 @@
                         <span class="material-icons">database</span>
                     </div>
                     <h3>Registry Management</h3>
-                    <p>Centralized database for farmers, fisherfolk, farms, and fishing grounds with complete profile management.</p>
+                    <p>Centralized database for farmers, and farms with complete profile management.</p>
                 </div>
 
                 <div class="feature-card">
@@ -74,7 +75,7 @@
                         <span class="material-icons">agriculture</span>
                     </div>
                     <h3>Production Tracking</h3>
-                    <p>Monitor crop, livestock, and fisheries production with planting schedules and harvest records.</p>
+                    <p>Monitor rice production</p>
                 </div>
 
                 <div class="feature-card">
@@ -120,10 +121,6 @@
                 <div class="stat-label">Registered Farmers</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">3,256</div>
-                <div class="stat-label">Registered Fisherfolk</div>
-            </div>
-            <div class="stat-item">
                 <div class="stat-number">45,892</div>
                 <div class="stat-label">MT Production</div>
             </div>
@@ -131,18 +128,6 @@
                 <div class="stat-number">8,934</div>
                 <div class="stat-label">Insured Assets</div>
             </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="cta-container">
-            <h2>Ready to Transform Your Agricultural Operations?</h2>
-            <p>Join thousands of agricultural workers benefiting from our comprehensive management system.</p>
-            <a href="login.php" class="btn">
-                Access the System
-                <span class="material-icons">arrow_forward</span>
-            </a>
         </div>
     </section>
     <!-- Request / Registration Section -->

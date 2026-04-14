@@ -46,7 +46,6 @@
         justify-content: center;
         padding: 1rem;
     }
-
     .login-card {
         background: white;
         border-radius: 16px;
@@ -54,6 +53,7 @@
         width: 100%;
         max-width: 400px;
         padding: 2.5rem;
+        position: relative;
     }
 
     .logo { text-align: center; margin-bottom: 2rem; }
@@ -128,15 +128,47 @@
         .login-card { padding: 2rem 1.5rem; }
     }
 
+
+.close-circle {
+    position: absolute;
+    top: 15px;
+    right: 15px;    
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff;
+    border: 2px solid #333;
+    border-radius: 50%;
+
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+
+    transition: 0.3s ease;
+}
+
+.close-circle:hover {
+    background: red;
+    color: white;
+    border-color: red;
+}
 </style>
 </head>
 <body>
+    
 <div class="login-card">
+    <a href="home.php" class="close-circle">×</a>
     <div class="logo">
         <div class="logo-icon">🌾</div>
         <div class="logo-text">AgriMS</div>
         <div class="logo-subtitle">Agricultural Management System</div>
     </div>
+    
 
     <?php if (!empty($error)) { echo "<div class='error'>{$error}</div>"; } ?>
 

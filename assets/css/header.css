@@ -176,15 +176,16 @@
         }
 
         .search-input::placeholder {
+            
             color: #9ca3af;
         }
 
         .search-icon {
             position: absolute;
             left: 14px;
-            top: 50%;
+            top: 55%;
             transform: translateY(-50%);
-            color: #9ca3af;
+            color: #adb0b5;
         }
 
         .search-icon .material-icons {
@@ -465,7 +466,21 @@
 }
 
 .modal-buttons {
-    margin-top: 15px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* ✅ CENTER horizontally */
+    gap: 10px;
+    margin-top: 20px;
+    
+}
+
+.modal-buttons button {
+    padding: 0.5rem;
+    background: linear-gradient(135deg, #00d9a3 0%, #00a86b 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
 }

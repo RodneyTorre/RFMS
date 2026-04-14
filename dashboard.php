@@ -20,11 +20,7 @@ include 'header.php';
         <button class="btn btn-secondary">
             <span class="material-icons">calendar_today</span>
             Filter Period
-        </button>
-        <button class="btn btn-primary">
-            <span class="material-icons">download</span>
-            Export Report
-        </button>
+            </button>
     </div>
 </div>
 

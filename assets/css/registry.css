@@ -332,7 +332,8 @@
     z-index: 9999;
 }
 
-.modal-box {
+.modal-content {
+    border: solid 1px #e93030;
     background: #fff;
     padding: 25px;
     border-radius: 10px;
@@ -340,16 +341,22 @@
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
-
-.modal-box input,
-.modal-box select {
+.modal-content form {
+    padding: 15px;
+}
+.modal-content input,
+.modal-content select {
     width: 100%;
-    padding: 10px;
-    margin: 8px 0;
+        padding: 8px;
+        padding-top: 15px;
+        border-radius: 8px;
+        font-size: 0.95rem;
+        transition: all 0.3s;
 }
 
 .modal-buttons {
     display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+    padding-top: 15px;
+    justify-content:center;
+    margin-top: 1px;
 }
