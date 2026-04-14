@@ -2,14 +2,20 @@
 session_start();
 include 'database.php';
 
+
 // Redirect if not logged in
 if (!isset($_SESSION['email'])) {
     header("Location: login.php");
     exit();
 }
 
+
 $page_title = "Profile";
 include 'header.php';
+
+$page_title = "Profile";
+include 'header.php';
+
 
 $email = $_SESSION['email'];
 
@@ -23,6 +29,36 @@ $user = $result->fetch_assoc();
 
 // Handle update
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    $name = $_POST['name'];
+
+
+    $name = $_POST['name'];
+    $role = $_POST['role'];
+    $location = $_POST['address'];
+    
+
+    $update = "UPDATE users 
+               SET name=?, role=?, address=? 
+               WHERE email=?";
+               
+    $stmt = $conn->prepare($update);
+    $stmt->bind_param("ssss", $name, $role, $location, $email);
+
+    if ($stmt->execute()) {
+        echo "<script>alert('Profile updated successfully!');</script>";
+        
+        // Refresh values
+        $user['name'] = $name;
+        $user['role'] = $role;
+        $user['address'] = $location;
+        
+    } else {
+
+        echo "<script>alert('Update failed!');</script>";
+
+        echo "<script>alert('Error updating profile');</script>";
+
 
     $name = $_POST['name'];
     $role = $_POST['role'];
@@ -46,9 +82,85 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
     } else {
         echo "<script>alert('Update failed!');</script>";
+
     }
 }
 ?>
+
+
+<link rel="stylesheet" href="assets/css/dashboard.css">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .profile-card {
+            max-width: 500px;
+            margin: auto;
+            margin-top: 50px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #0d6efd;
+            color: white;
+            font-size: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="profile-card text-center">
+
+        <!-- Avatar -->
+        <div class="profile-avatar mb-3">
+            <?php echo strtoupper(substr($user['email'], 0, 1)); ?>
+        </div>
+
+        <h3><?php echo $user['name'] ?? 'No Name'; ?></h3>
+        <p class="text-muted"><?php echo $user['email']; ?></p>
+
+        <hr>
+
+        <!-- Update Form -->
+        <form method="POST">
+            <div class="mb-3 text-start">
+                <label>Name</label>
+                <input type="text" name="name" class="form-control" 
+                       value="<?php echo $user['name']; ?>" required>
+            </div>
+
+            <div class="mb-3 text-start">
+                <label>Email</label>
+                <input type="email" class="form-control" 
+                       value="<?php echo $user['email']; ?>" disabled>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">
+                Update Profile
+            </button>
+        </form>
+
+
+<!-- Page Header -->
+<div class="page-header">
+    <div>
+        <h1 class="page-title">Profile</h1>
+        <p class="page-subtitle">Manage your personal information</p>
+    </div>
+</div>
+
 
 <link rel="stylesheet" href="assets/css/dashboard.css">
 
@@ -59,6 +171,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <p class="page-subtitle">Manage your personal information</p>
     </div>
 </div>
+
 
 <!-- PROFILE CARD -->
 <div class="card" style="margin-bottom:20px;">
@@ -135,3 +248,5 @@ function toggleEdit() {
     form.style.display = (form.style.display === "none") ? "block" : "none";
 }
 </script>
+</body>
+</html>

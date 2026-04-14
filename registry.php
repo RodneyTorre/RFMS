@@ -1,55 +1,38 @@
 <?php
-// registry.php - Registry Management Page
-session_start();
-
-// Set page title
-$page_title = "Registry Management";
-
-// User data
-$current_user = [
-    'name' => 'Admin User',
-    'role' => 'System Administrator',
-    'initials' => 'AU'
-];
-
-// Sample farmer data - In real app, this would come from database
-$farmers = [
-    [
-        'rsbsa' => 'RSBSA-2024-001234',
-        'name' => 'Juan Dela Cruz',
-        'barangay' => 'San Jose',
-        'farm_size' => '2.5 ha',
-        'crops' => 'Rice, Corn',
-        'status' => 'Active'
-    ],
-    [
-        'rsbsa' => 'RSBSA-2024-001235',
-        'name' => 'Maria Santos',
-        'barangay' => 'Santa Maria',
-        'farm_size' => '1.8 ha',
-        'crops' => 'Vegetables',
-        'status' => 'Active'
-    ],
-    [
-        'rsbsa' => 'RSBSA-2024-001236',
-        'name' => 'Pedro Reyes',
-        'barangay' => 'San Miguel',
-        'farm_size' => '3.2 ha',
-        'crops' => 'Rice',
-        'status' => 'Active'
-    ],
-    [
-        'rsbsa' => 'RSBSA-2024-001237',
-        'name' => 'Ana Garcia',
-        'barangay' => 'Santo Niño',
-        'farm_size' => '1.5 ha',
-        'crops' => 'Corn, Cassava',
-        'status' => 'Pending'
-    ],
-];
-
-// Include header
+include 'database.php';
 include 'header.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $full_name = $_POST['full_name'];
+    $gender = $_POST['gender'];
+    $contact = $_POST['contact_number'];
+    $address = $_POST['address'];
+    $farm_size = $_POST['farm_size'];
+    $crop_type = $_POST['crop_type'];
+
+    $sql = "INSERT INTO farmers (full_name, gender, contact_number, address, farm_size, crop_type)
+            VALUES (?, ?, ?, ?, ?, ?)";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssssds", $full_name, $gender, $contact, $address, $farm_size, $crop_type);
+
+    if ($stmt->execute()) {
+        echo "Farmer added successfully!";
+    } else {
+        echo "Error: " . $conn->error;
+    }
+}
+$farmers = [];
+
+$sql = "SELECT * FROM farmers ORDER BY farmer_id DESC";
+$result = $conn->query($sql);
+
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+        $farmers[] = $row;
+    }
+}
 ?>
 <link rel="stylesheet" href="assets/css/registry.css">
 
@@ -64,7 +47,7 @@ include 'header.php';
             <span class="material-icons">filter_list</span>
             Filter
         </button>
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" onclick="openFarmerModal()">
             <span class="material-icons">add</span>
             Add New Entry
         </button>
@@ -101,11 +84,12 @@ include 'header.php';
         <tbody>
             <?php foreach ($farmers as $farmer): ?>
             <tr>
-                <td><?php echo $farmer['rsbsa']; ?></td>
-                <td><?php echo $farmer['name']; ?></td>
-                <td><?php echo $farmer['barangay']; ?></td>
+                <td><?php echo $farmer['farmer_id']; ?></td>
+                <td><?php echo $farmer['full_name']; ?></td>
+                <td><?php echo $farmer['address']; ?></td>
                 <td><?php echo $farmer['farm_size']; ?></td>
-                <td><?php echo $farmer['crops']; ?></td>
+                <td><?php echo $farmer['crop_type']; ?></td>
+                <td>Active</td>
                 <td>
                     <span class="status-badge <?php echo strtolower($farmer['status']); ?>">
                         <?php echo $farmer['status']; ?>
@@ -129,8 +113,59 @@ include 'header.php';
         </tbody>
     </table>
 </div>
+<!-- FARMER MODAL -->
+<div id="farmerModal" class="modal">
 
+    <div class="modal-content">
+
+        <!-- HEADER -->
+        <div class="modal-header">
+            <h2>Add New Farmer</h2>
+            <span class="close-btn" onclick="closeFarmerModal()">×</span>
+        </div>
+
+        <!-- FORM -->
+        <form method="POST" action="">
+
+            <input type="text" name="full_name" placeholder="Full Name" required>
+
+            <select name="gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <input type="text" name="contact_number" placeholder="Contact Number">
+            <input type="text" name="address" placeholder="Address">
+            <input type="number" step="0.01" name="farm_size" placeholder="Farm Size">
+            <input type="text" name="crop_type" placeholder="Crop Type">
+
+            <!-- FOOTER BUTTONS -->
+            <div class="modal-buttons">
+                <button type="button" onclick="closeFarmerModal()">Cancel</button>
+                <button type="submit">Save</button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
 <script>
+    function openFarmerModal() {
+        document.getElementById("farmerModal").style.display = "flex";
+    }
+
+    function closeFarmerModal() {
+        document.getElementById("farmerModal").style.display = "none";
+    }
+
+    // close when clicking outside modal box
+    window.onclick = function(event) {
+        let modal = document.getElementById("farmerModal");
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
     // Tab switching functionality
     document.querySelectorAll('.tab-btn').forEach(tab => {
         tab.addEventListener('click', function() {
