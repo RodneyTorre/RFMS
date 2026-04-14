@@ -151,9 +151,68 @@ window.onclick = function (event) {
     }
 };
 
+<<<<<<< HEAD
 // Dropdown
 function toggleUserDropdown(event) {
     event.stopPropagation();
+=======
+                        <!-- Dropdown menu -->
+                        <div id="userDropdownMenu" class="dropdown-menu">
+                            <a href="profile.php">Profile</a>
+                            <a href="#" onclick="openLogoutModal(); return false;">Logout</a>
+                        </div>    
+                    </div>
+                </div>
+            
+            </header>
+<<<<<<< HEAD
+                                   
+=======
+            <body>
+             <div id="logoutModal">
+                <div class="modal-content">
+                    <h3>Are you sure you want to log out?</h3>
+                    <div class="modal-buttons">
+                        <button id="cancelLogout">Cancel</button>
+                        <form action="logout.php" method="POST" style="margin:0;">
+                            <button type="submit" id="confirmLogout">Logout</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </body>
+
+>>>>>>> b31dc38ec0ede619ba8e3be62673137b9c086c29
+            <!-- Content Container -->
+            <div class="content-container">
+                <!-- Page content will be inserted here -->
+
+            
+<script >
+<<<<<<< HEAD
+=======
+// Open modal
+function openLogoutModal() {
+    document.getElementById("logoutModal").classList.add("active");
+}
+
+// Close modal
+document.getElementById("cancelLogout").onclick = function() {
+    document.getElementById("logoutModal").classList.remove("active");
+};
+
+// Close when clicking outside
+window.onclick = function(event) {
+    let modal = document.getElementById("logoutModal");
+    if (event.target === modal) {
+        modal.classList.remove("active");
+    }
+};
+>>>>>>> b31dc38ec0ede619ba8e3be62673137b9c086c29
+    //For user dropdown                
+    function toggleUserDropdown(event) {
+    event.stopPropagation(); // Prevent triggering parent clicks
+>>>>>>> 41b5953 (modified)
 
     const menu = document.getElementById('userDropdownMenu');
     const arrow = document.getElementById('arrow');

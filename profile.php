@@ -1,7 +1,19 @@
 <?php
 session_start();
+<<<<<<< HEAD
 include 'database.php';
 
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+include 'db.php';
+=======
+include 'database.php';
+>>>>>>> b31dc38 (login is updated)
+=======
+include 'database.php';
+>>>>>>> b31dc38ec0ede619ba8e3be62673137b9c086c29
+>>>>>>> 41b5953 (modified)
 
 // Redirect if not logged in
 if (!isset($_SESSION['email'])) {
@@ -9,6 +21,7 @@ if (!isset($_SESSION['email'])) {
     exit();
 }
 
+<<<<<<< HEAD
 
 $page_title = "Profile";
 include 'header.php';
@@ -17,6 +30,20 @@ $page_title = "Profile";
 include 'header.php';
 
 
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+$page_title = "Profile";
+include 'header.php';
+
+>>>>>>> b31dc38 (login is updated)
+=======
+$page_title = "Profile";
+include 'header.php';
+
+>>>>>>> b31dc38ec0ede619ba8e3be62673137b9c086c29
+>>>>>>> 41b5953 (modified)
 $email = $_SESSION['email'];
 
 // Fetch user data
@@ -29,7 +56,12 @@ $user = $result->fetch_assoc();
 
 // Handle update
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 41b5953 (modified)
     $name = $_POST['name'];
 
 
@@ -58,7 +90,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "<script>alert('Update failed!');</script>";
 
         echo "<script>alert('Error updating profile');</script>";
+<<<<<<< HEAD
 
+=======
+=======
+=======
+>>>>>>> b31dc38ec0ede619ba8e3be62673137b9c086c29
+>>>>>>> 41b5953 (modified)
 
     $name = $_POST['name'];
     $role = $_POST['role'];
@@ -82,14 +120,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
     } else {
         echo "<script>alert('Update failed!');</script>";
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> b31dc38 (login is updated)
+=======
+>>>>>>> b31dc38ec0ede619ba8e3be62673137b9c086c29
+>>>>>>> 41b5953 (modified)
     }
 }
 ?>
 
+<<<<<<< HEAD
 
 <link rel="stylesheet" href="assets/css/dashboard.css">
 
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 41b5953 (modified)
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -161,7 +211,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 </div>
 
+<<<<<<< HEAD
 
+=======
+</body>
+</html>
+=======
+=======
+>>>>>>> b31dc38ec0ede619ba8e3be62673137b9c086c29
+>>>>>>> 41b5953 (modified)
 <link rel="stylesheet" href="assets/css/dashboard.css">
 
 <!-- Page Header -->
@@ -247,6 +305,14 @@ function toggleEdit() {
     var form = document.getElementById("editForm");
     form.style.display = (form.style.display === "none") ? "block" : "none";
 }
+<<<<<<< HEAD
 </script>
+<<<<<<< HEAD
 </body>
 </html>
+=======
+>>>>>>> b31dc38 (login is updated)
+=======
+</script>
+>>>>>>> b31dc38ec0ede619ba8e3be62673137b9c086c29
+>>>>>>> 41b5953 (modified)
