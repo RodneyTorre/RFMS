@@ -281,10 +281,10 @@
         }
 
         /* Stats Section */
-        .stats {
+        /* .stats {
             padding: 80px 24px;
-            background: #0d4d3d;
-            color: rgb(209, 18, 18);
+            background: #2911b0;
+            color: rgb(201, 36, 36);
         }
 
         .stats-container {
@@ -309,8 +309,19 @@
 
         .stat-label {
             font-size: 16px;
-            color: rgba(195, 14, 14, 0.8);
+            color: rgba(224, 223, 223, 0.7);
+        } */
+         .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #10b981;
         }
+
+        .stat-label {
+            font-size: 16px;
+            color: rgba(224, 223, 223, 0.7);
+}
         /* Footer */
         .footer {
             background: #0f172a;

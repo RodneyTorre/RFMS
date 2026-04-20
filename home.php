@@ -7,7 +7,18 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/home.css">
-       
+       <style>.stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #10b981;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: rgba(224, 223, 223, 0.7);
+}
+</style>
 </head>
 <body>
     <!-- Header -->
@@ -15,7 +26,7 @@
         <div class="nav-container">
             <div class="logo">
                 <span class="material-icons">agriculture</span>
-                <span>RFMS</span>
+                <span>RFIMS</span>
             </div>
             <nav class="nav-links">
                 <a href="#features">Features</a>
@@ -117,15 +128,15 @@
     <section class="stats">
         <div class="stats-container">
             <div class="stat-item">
-                <div class="stat-number">12,847</div>
+                <div class="stat-number"></div>
                 <div class="stat-label">Registered Farmers</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">45,892</div>
+                <div class="stat-number"></div>
                 <div class="stat-label">MT Production</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">8,934</div>
+                <div class="stat-number"></div>
                 <div class="stat-label">Insured Assets</div>
             </div>
         </div>

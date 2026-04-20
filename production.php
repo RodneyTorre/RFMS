@@ -5,12 +5,6 @@ session_start();
 // Set page title
 $page_title = "Production Management";
 
-// User data
-$current_user = [
-    'name' => 'Admin User',
-    'role' => 'System Administrator',
-    'initials' => 'AU'
-];
 
 // Summary statistics
 $stats = [

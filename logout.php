@@ -28,17 +28,3 @@ exit();
 include 'header.php';
 
 ?>
-<body>
-     <!-- Logout Modal -->
-            <div id="logoutModal">
-            <div class="modal-content">
-                <h3>Are you sure you want to log out?</h3>
-                <div class="modal-buttons">
-                <button id="cancelLogout">Cancel</button>
-                <form action="logout.php" method="POST" style="margin:0;">
-                    <button type="submit" id="confirmLogout">Logout</button>
-                </form>
-                </div>
-            </div>
-            </div>
-</body>

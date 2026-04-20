@@ -1,12 +1,27 @@
 <?php
 // dashboard.php - Dashboard page using AgriMS header template
 session_start();
+include 'database.php';
+// TOTAL REGISTERED FARMERS
+$farmersQuery = $conn->query("SELECT COUNT(*) AS total_farmers FROM farmers");
+$farmersData = $farmersQuery->fetch_assoc();
+$totalFarmers = $farmersData['total_farmers'];
 
+// TOTAL PRODUCTION (example: sum of quantity column)
+$productionQuery = $conn->query("SELECT SUM(quantity) AS total_production FROM production");
+$productionData = $productionQuery->fetch_assoc();
+$totalProduction = $productionData['total_production'] ?? 0;
+
+// TOTAL INSURED ASSETS
+$assetsQuery = $conn->query("SELECT COUNT(*) AS total_assets FROM assets");
+$assetsData = $assetsQuery->fetch_assoc();
+$totalAssets = $assetsData['total_assets'];
 // Set page title
 $page_title = "Dashboard";
 
 // Include header
 include 'header.php';
+
 ?>
 <!-- Style -->
     <link rel="stylesheet" href="assets/css/dashboard.css">
@@ -23,7 +38,6 @@ include 'header.php';
             </button>
     </div>
 </div>
-
 <!-- Welcome Card -->
 <div class="card welcome-card">
     <h2>Welcome to Agriculture Management System</h2>
@@ -36,10 +50,8 @@ include 'header.php';
         <div class="stat-icon-wrapper green">👥</div>
         <div class="stat-label">Registered Farmers</div>
         <div class="stat-header">
-            <div class="stat-value">12,847</div>
-            <div class="stat-trend">
-                <span class="material-icons">trending_up</span>
-                +5.2%
+            <div class="stat-value">
+                <p><?php echo $totalFarmers; ?></p>
             </div>
         </div>
     </div>
@@ -48,10 +60,8 @@ include 'header.php';
         <div class="stat-icon-wrapper yellow">🌾</div>
         <div class="stat-label">Total Production (MT)</div>
         <div class="stat-header">
-            <div class="stat-value">45,892</div>
-            <div class="stat-trend">
-                <span class="material-icons">trending_up</span>
-                +12.1%
+            <div class="stat-value">
+                <p><?php echo $totalProduction; ?></p>
             </div>
         </div>
     </div>
@@ -60,11 +70,10 @@ include 'header.php';
         <div class="stat-icon-wrapper purple">🛡️</div>
         <div class="stat-label">Insured Assets</div>
         <div class="stat-header">
-            <div class="stat-value">8,934</div>
-            <div class="stat-trend">
-                <span class="material-icons">trending_up</span>
-                +8.4%
+            <div class="stat-value">
+                <p><?php echo $totalAssets; ?></p>
             </div>
+            
         </div>
     </div>
 </div>

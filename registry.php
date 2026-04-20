@@ -81,7 +81,7 @@ include 'header.php';
         <tbody>
             <?php foreach ($farmers as $farmer): ?>
             <tr>
-                <td><?php echo $farmer['farmer_id']; ?></td>
+                <td> RSBA <?php echo $farmer['farmer_id']; ?></td>
                 <td><?php echo $farmer['full_name']; ?></td>
                 <td><?php echo $farmer['address']; ?></td>
                 <td><?php echo $farmer['farm_size']; ?></td>
