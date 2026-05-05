@@ -33,54 +33,7 @@ include 'header.php';
 ?>
 
 <link rel="stylesheet" href="assets/css/inventory.css">
-<style>
-    .modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    justify-content: center;
-    align-items: center;
-}
 
-/* LOGIN STYLE CARD */
-.modal-card {
-    background: #fff;
-    width: 380px;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    text-align: center;
-}
-
-/* TITLE */
-.modal-title {
-    margin-bottom: 20px;
-    font-size: 22px;
-    font-weight: bold;
-    color: #10b981;
-}
-
-/* FORM LAYOUT */
-.modal-form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-/* INPUT STYLE (LOGIN STYLE LOOK) */
-.modal-form input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    outline: none;
-    font-size: 14px;
-}
-
-.modal-form input:focus {
-    border-color: #2e7d32;
-}
-</style>
 <!-- HEADER -->
 <div class="page-header">
 

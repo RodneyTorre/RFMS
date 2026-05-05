@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgriMS - Agriculture Management System</title>
+    <title>RFIMS - Rice Farming Inventory Management System</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/home.css">
@@ -31,14 +31,7 @@
             <nav class="nav-links">
                 <a href="#features">Features</a>
                 <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-                <a href="#request">Request / Registration</a>
-                <a href="#feedback">Feedback</a>
-                <div class="login-btn">
-                    <a href="login.php" class="btn btn-primary">
-                        Login to System
-                    </a>
-                </div>
+                <a href="#footer">Contact</a>
             </nav>
         </div>
     </header>
@@ -53,15 +46,6 @@
                 <p>
                     Comprehensive digital platform for managing farmers, production, insurance, and agricultural operations across the Inabanga.
                 </p>
-                <div class="hero-buttons">
-                    <a href="login.php" class="btn btn-primary">
-                        Get Started
-                        <span class="material-icons">arrow_forward</span>
-                    </a>
-                    <a href="#features" class="btn btn-secondary">
-                        Learn More
-                    </a>
-                </div>
             </div>
     </section>
 
@@ -123,131 +107,24 @@
             </div>
         </div>
     </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="stats-container">
-            <div class="stat-item">
-                <div class="stat-number"></div>
-                <div class="stat-label">Registered Farmers</div>
+    <!-- About section -->
+    <section class="about" id="about">
+            <div class="about-content">
+                <h2>About RFIMS</h2>
+                <p>
+                    RFIMS is a comprehensive agriculture management system designed to modernize and streamline agricultural operations across the Philippines. Developed in collaboration with the Department of Agriculture, RFIMS provides a centralized platform for managing farmers, production, insurance, and monitoring activities. With features like registry management, production tracking, insurance management, and GIS mapping, RFIMS empowers farmers and agricultural stakeholders to make informed decisions, improve productivity, and enhance resilience against climate change and other challenges.
+                </p>
             </div>
-            <div class="stat-item">
-                <div class="stat-number"></div>
-                <div class="stat-label">MT Production</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number"></div>
-                <div class="stat-label">Insured Assets</div>
-            </div>
-        </div>
     </section>
-    <!-- Request / Registration Section -->
-    <section class="request-section" id="request">
-        <div class="request-container">
-            <h2>Farmer Requests & Registration</h2>
-            <p>Submit your request for insurance, farm registration, or equipment assistance.</p>
-
-            <form action="submit_request.php" method="POST" class="request-form" id="requestForm">
-
-                <!-- Basic Farmer Info -->
-                <div class="form-group">
-                    <input type="text" class="form-input" name="farmer_name" placeholder=" " required>
-                    <label><span>Your Full Name</span></label>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-input" name="contact_info" placeholder=" " required>
-                    <label><span>Phone / Email</span></label>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-input" name="address" placeholder=" " required>
-                    <label><span>Address (Barangay)</span></label>
-                </div>
-                <!-- Request Type Dropdown -->
-                <select name="request_type" id="request_type" required>
-                    <option value="">Select Request Type</option>
-                    <option value="Insurance Request">Insurance Request</option>
-                    <option value="Farm Registration">Farm Registration</option>
-                </select>
-
-                <!-- Insurance Fields -->
-                <div class="dynamic-fields" id="insurance_fields" style="display:none;">
-                    <div class="form-group">
-                        <input type="text" class="dynamic-input" name="farm_name_insurance" placeholder=" ">
-                        <label for="farm_name_insurance" ><span>Farm Name (if applicable)</span></label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="dynamic-input" name="farm_location_insurance" placeholder=" ">
-                        <label for="farm_location_insurance" ><span>Location of Farm</span></label>
-                    </div>
-                    <select name="insurance_type">
-                        <option value="">Select Insurance Type</option>
-                        <option value="Crop">Crop</option>
-                        <option value="Livestock">Livestock</option>
-                        <option value="Equipment">Equipment</option>
-                    </select>
-                    <div class="form-group">
-                        <input type="text" class="dynamic-input" name="insured_assets" placeholder=" ">
-                        <label ><span>Describe Assets to Insure</span></label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="dynamic-input" name="coverage_period" placeholder=" ">
-                        <label ><span>Coverage Period (Start - End)</span></label>
-                    </div>
-                    <input type="file" name="supporting_docs" accept=".pdf,.jpg,.png">
-                </div>
-
-                <!-- Registration Fields -->
-                <div class="dynamic-fields" id="registration_fields" style="display:none;">
-                    <div class="form-group">
-                        <input type="text" class="dynamic-input" name="farm_name_registration" placeholder=" ">
-                        <label ><span>Farm Name (Optional)</span></label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="dynamic-input" name="farm_location_registration" placeholder=" ">
-                        <label ><span>Farm Location</span></label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="dynamic-input" name="farm_type" placeholder=" ">
-                        <labe><span>Type of Farm (Crop, Livestock, Fisheries)</span></label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="dynamic-input" name="farm_size" placeholder=" ">
-                        <label ><span>Farm Size (Hectares)</span></label>
-                    </div>
-                    <input type="file" name="ownership_docs" accept=".pdf,.jpg,.png">
-                </div>
-
-                <button type="submit" class="btn btn-primary">Submit Request</button>
-            </form>
-        </div>
-    </section>
-    <!-- Feedback Section -->
-    <section class="feedback-section" id="feedback">
-        <div class="feedback-container">
-            <h2>Farmer Feedback</h2>
-            <p>Your suggestions and feedback help us improve our agriculture services.</p>
-
-            <form action="submit_feedback.php" method="POST" class="feedback-form">
-
-                <input type="text" name="farmer_name" placeholder="Your Name" required>
-
-                <textarea name="message" placeholder="Write your feedback..." required></textarea>
-
-                <button type="submit" class="btn btn-primary">
-                    Send Feedback
-                </button>
-
-            </form>
-        </div>
-    </section>
+    
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="footer-container">
             <div class="footer-content">
                 <div class="footer-brand">
                     <h3>
                         <span class="material-icons">agriculture</span>
-                        AgriMS
+                        RFIMS
                     </h3>
                     <p>
                         A comprehensive agriculture management system designed to modernize and streamline agricultural operations across the Philippines.
@@ -255,34 +132,35 @@
                 </div>
                 <div class="footer-section">
                     <h4>System</h4>
+                    
                     <ul class="footer-links">
-                        <li><a href="registry-agrims.php">Registry</a></li>
-                        <li><a href="production-agrims.php">Production</a></li>
-                        <li><a href="insurance-agrims.php">Insurance</a></li>
-                        <li><a href="monitoring-agrims.php">Monitoring</a></li>
+                        <li><a>Registry</a></li>
+                        <li><a>Inventory</a></li>
+                        <li><a>Insurance</a></li>
+                        <li><a>Monitoring</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Resources</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">User Guide</a></li>
-                        <li><a href="#">Training</a></li>
-                        <li><a href="#">Support</a></li>
+                        <li><a >Documentation</a></li>
+                        <li><a >User Guide</a></li>
+                        <li><a >Training</a></li>
+                        <li><a >Support</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Email Support</a></li>
-                        <li><a href="#">Feedback</a></li>
-                        <li><a href="#">Report Issue</a></li>
+                        <li><a >Help Center</a></li>
+                        <li><a >Email Support</a></li>
+                        <li><a >Feedback</a></li>
+                        <li><a >Report Issue</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Agriculture Management System. Department of Agriculture - Republic of the Philippines. All rights reserved.</p>
+                <p>&copy; 2026 Rice Farming Inventory Management System. Department of Agriculture in municipality of Inabanga- Republic of the Philippines. All rights reserved.</p>
             </div>
         </div>
     </footer>

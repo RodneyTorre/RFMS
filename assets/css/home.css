@@ -237,8 +237,8 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 32px;
         }
-
-        .feature-card {
+        
+        .feature-card , .about {
             padding: 32px;
             background: #f9fafb;
             border-radius: 16px;
@@ -246,7 +246,7 @@
             transition: all 0.3s;
         }
 
-        .feature-card:hover {
+        .feature-card:hover , .about:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
             background: white;
@@ -268,60 +268,17 @@
             color: white;
         }
 
-        .feature-card h3 {
+        .feature-card h3 , .about h2 {
             font-size: 20px;
             font-weight: 600;
             margin-bottom: 12px;
             color: #0f172a;
         }
 
-        .feature-card p {
+        .feature-card p , .about p {
             color: #64748b;
             line-height: 1.6;
         }
-
-        /* Stats Section */
-        /* .stats {
-            padding: 80px 24px;
-            background: #2911b0;
-            color: rgb(201, 36, 36);
-        }
-
-        .stats-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 48px;
-             
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #10b981;
-        }
-
-        .stat-label {
-            font-size: 16px;
-            color: rgba(224, 223, 223, 0.7);
-        } */
-         .stat-number {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #10b981;
-        }
-
-        .stat-label {
-            font-size: 16px;
-            color: rgba(224, 223, 223, 0.7);
-}
         /* Footer */
         .footer {
             background: #0f172a;

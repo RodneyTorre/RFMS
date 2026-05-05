@@ -2,6 +2,7 @@
 session_start();
 include 'database.php';
 
+$page_title= "Registry";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -132,8 +133,8 @@ include 'header.php';
 
             <!-- FOOTER BUTTONS -->
             <div class="modal-buttons">
-                <button type="button" onclick="closeFarmerModal()">Cancel</button>
                 <button type="submit">Save</button>
+                <button type="button" onclick="closeFarmerModal()">Cancel</button>
             </div>
 
         </form>

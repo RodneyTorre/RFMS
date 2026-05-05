@@ -36,3 +36,16 @@
     .status-badge { display: inline-block; padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 500; }
     .status-badge.completed { background: #d1fae5; color: #065f46; }
     .status-badge.ongoing { background: #dbeafe; color: #1e40af; }
+
+    .tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-btn.active {
+    background: #2e7d32;
+    color: #fff;
+}

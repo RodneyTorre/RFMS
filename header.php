@@ -32,15 +32,12 @@ if (isset($_SESSION['email'])) {
 $nav_items = [
     ['id' => 'dashboard', 'label' => 'Dashboard', 'url' => 'dashboard.php'],
     ['id' => 'registry', 'label' => 'Registry', 'url' => 'registry.php'],
-    ['id' => 'production', 'label' => 'Production', 'url' => 'production.php'],
-    ['id' => 'monitoring', 'label' => 'Monitoring', 'url' => 'monitoring.php'],
     ['id' => 'programs', 'label' => 'Programs', 'url' => 'programs.php'],
     ['id' => 'insurance', 'label' => 'Insurance', 'url' => 'insurance.php'],
     ['id' => 'incidents', 'label' => 'Incidents & Claims', 'url' => 'incidents.php'],
     ['id' => 'inventory', 'label' => 'Inventory', 'url' => 'inventory.php'],
     ['id' => 'maps', 'label' => 'Maps & GIS', 'url' => 'maps.php'],
     ['id' => 'reports', 'label' => 'Reports', 'url' => 'reports.php'],
-    ['id' => 'feedback', 'label' => 'Feedback', 'url' => 'feedback.php']
 ];
 ?>
 <!DOCTYPE html>
@@ -48,7 +45,7 @@ $nav_items = [
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><?php echo isset($page_title) ? $page_title . ' - ' : ''; ?>AgriMS</title>
+<title><?php echo isset($page_title) ? $page_title . ' - ' : ''; ?>RFIMS</title>
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/header.css">
@@ -69,7 +66,7 @@ $nav_items = [
                 <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
             </svg>
         </div>
-        <span class="logo-text">RFMS</span>
+        <span class="logo-text">RFIMS</span>
     </div>
 
     <nav class="sidebar-nav">

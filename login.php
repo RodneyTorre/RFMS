@@ -33,7 +33,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login - AgriMS</title>
+<title>Login - RFIMS</title>
 <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -165,8 +165,8 @@
     <a href="home.php" class="close-circle">×</a>
     <div class="logo">
         <div class="logo-icon">🌾</div>
-        <div class="logo-text">AgriMS</div>
-        <div class="logo-subtitle">Agricultural Management System</div>
+        <div class="logo-text">RFIMS</div>
+        <div class="logo-subtitle">Rice Farmer Inventory Management System</div>
     </div>
     
 
