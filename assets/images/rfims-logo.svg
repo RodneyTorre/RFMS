@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <title>RFIMS Logo</title>
+
+  <!-- Badge background -->
+  <rect x="0" y="0" width="400" height="400" rx="72" fill="#16a34a"/>
+
+  <!-- Stalk -->
+  <line x1="200" y1="340" x2="200" y2="90" stroke="#fff" stroke-width="16" stroke-linecap="round"/>
+
+  <!-- Left grain clusters -->
+  <ellipse cx="163" cy="130" rx="28" ry="12" fill="#fff" transform="rotate(-38 163 130)"/>
+  <ellipse cx="150" cy="170" rx="28" ry="12" fill="#fff" transform="rotate(-35 150 170)"/>
+  <ellipse cx="143" cy="210" rx="26" ry="11" fill="#fff" transform="rotate(-32 143 210)"/>
+
+  <!-- Right grain clusters -->
+  <ellipse cx="237" cy="130" rx="28" ry="12" fill="#fff" transform="rotate(38 237 130)"/>
+  <ellipse cx="250" cy="170" rx="28" ry="12" fill="#fff" transform="rotate(35 250 170)"/>
+  <ellipse cx="257" cy="210" rx="26" ry="11" fill="#fff" transform="rotate(32 257 210)"/>
+
+  <!-- Top grain -->
+  <ellipse cx="200" cy="97" rx="12" ry="28" fill="#fff"/>
+
+  <!-- Root curve left -->
+  <path d="M200 338 Q165 322 146 296" stroke="#fff" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <!-- Root curve right -->
+  <path d="M200 338 Q235 322 254 296" stroke="#fff" stroke-width="12" stroke-linecap="round" fill="none"/>
+</svg>

@@ -23,3 +23,4 @@ window.addEventListener('click', function(event) {
         arrow.style.transform = 'rotate(0deg)';
     }
 });
+

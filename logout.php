@@ -7,6 +7,9 @@ $_SESSION = [];
 // Destroy the session
 session_destroy();
 
+header("Location: login.php");
+exit();
+
 // Delete the session cookie
 if (ini_get("session.use_cookies")) {
     $params = session_get_cookie_params();

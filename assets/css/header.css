@@ -484,3 +484,133 @@
     cursor: pointer;
     transition: all 0.3s;
 }
+.search-results{
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 999;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.search-item{
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.search-item:hover{
+    background: #f5f5f5;
+}
+
+/* MODAL */
+.farmer-modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.5);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.farmer-modal-content{
+    background:#fff;
+    padding:25px;
+    width:400px;
+    border-radius:12px;
+    position:relative;
+}
+
+.close-modal{
+    position:absolute;
+    right:15px;
+    top:10px;
+    font-size:25px;
+    cursor:pointer;
+}
+/* FARMER MODAL */
+.farmer-modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.5);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.farmer-modal-content{
+    background:#fff;
+    width:400px;
+    padding:25px;
+    border-radius:16px;
+    position:relative;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.close-modal{
+    position:absolute;
+    right:20px;
+    top:15px;
+    font-size:28px;
+    cursor:pointer;
+}
+/* SEARCH */
+.search-container{
+    position: relative;
+    width: 320px;
+}
+
+.search-results{
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.search-item{
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.search-item:hover{
+    background: #f5f5f5;
+}
+
+/* MODAL */
+.farmer-modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.5);
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.farmer-modal-content{
+    background:#fff;
+    width:400px;
+    padding:25px;
+    border-radius:12px;
+    position:relative;
+}
+
+.close-modal{
+    position:absolute;
+    top:10px;
+    right:15px;
+    font-size:28px;
+    cursor:pointer;
+}
